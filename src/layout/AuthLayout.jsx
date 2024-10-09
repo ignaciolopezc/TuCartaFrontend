@@ -1,19 +1,18 @@
-import { useState, Link } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Outlet, Navigate } from "react-router-dom";
+import { Link } from "react";
+import { Outlet } from "react-router-dom";
 
-import Footer from "../components/common/Footer";
-import NavBar from "../components/common/NavBar";
+import Footer from "../components/Footer";
+import NavBar from "../components/NavBar";
 
 function AuthLayout() {
-	const [isOpen, setIsOpen] = useState(false);
-	return (
-		<>
-			<NavBar />
-			<Outlet />
-			<Footer />
-		</>
-	);
+  return (
+	<main className="bg-dark">
+      <div>auth layout</div>
+      <NavBar />
+      <Outlet />
+      <Footer />
+	</main>
+  );
 }
 
 export default AuthLayout;

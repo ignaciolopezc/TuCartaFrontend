@@ -1,11 +1,7 @@
-const colors = require('tailwindcss/colors')
-const plugin = require('tailwindcss/plugin')
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-    content: ["./src/**/*.{html,js}", "./node_modules/tw-elements/dist/js/**/*.js"],
-    darkMode: 'class',
-    important: true,
-    theme: {
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
         screens: {
             xs: "540px",
             sm: '640px',
@@ -16,6 +12,10 @@ module.exports = {
         },
         fontFamily: {
             'nunito': ['"Nunito", sans-serif'],
+            'cursive-alex': ['"Alex Brush", cursive'],
+            'cursive-kaushan': ['"Kaushan Script", cursive'],
+            'head-ebgaramond': ['"EB Garamond", serif'],
+            'para-worksans': ['"Work Sans", sans-serif'],
         },
         container: {
             center: true,
@@ -67,8 +67,7 @@ module.exports = {
             },
         },
     },
-
-    plugins: [
+  plugins: [
         require("@tailwindcss/forms")({
           strategy: 'class', // only generate classes
         }),

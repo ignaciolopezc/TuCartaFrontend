@@ -1,17 +1,20 @@
-import { Link } from "react";
-import { Outlet } from "react-router-dom";
-
 import Footer from "../components/Footer";
-import NavBar from "../components/NavBar";
+import Navbar from "../components/Navbar";
+import Login from "../pages/Login";
+import Contacto from "../pages/Contacto";
+import Home from "../pages/Home";
 
 function AuthLayout() {
   return (
-	<main className="bg-dark">
-      <div>auth layout</div>
-      <NavBar />
-      <Outlet />
-      <Footer />
-	</main>
+	<>
+		<div className="font-nunito text-base text-black dark:text-white dark:bg-slate-900">
+			<Navbar />
+			<Contacto />
+			<Home />
+			<Login />
+			<Footer />
+		</div>
+    </>
   );
 }
 

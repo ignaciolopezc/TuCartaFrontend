@@ -16,6 +16,7 @@ const Login = () => {
 
 	return (
 		<>
+		<section id="login">
 			<div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
 				<div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row max-w-4xl w-full">
 					<div className="w-full md:w-1/2 h-48 md:h-auto">
@@ -123,6 +124,7 @@ const Login = () => {
 					</div>
 				</div>
 			</div>
+		</section>
 		</>
 	);
 };

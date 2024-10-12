@@ -3,87 +3,20 @@ import { motion, AnimatePresence, useAnimation } from 'framer-motion'
 
 import logoDark from "../assets/images/logo-dark.png"
 // import logoLight from "../assets/images/logo-light.png"
+import Login from '../pages/Login';
 
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false)
-	const [lastScrollY, setLastScrollY] = useState(0)
-	const [isVisible, setIsVisible] = useState(true)
+	// const [isVisible, setIsVisible] = useState(true)
+	// const [lastScrollY, setLastScrollY] = useState(0)
+	const [showLogin, setShowLogin] = useState(false)
 	const controls = useAnimation()
 
-	// useEffect(() => {
-	// 	const handleScroll = () => {
-	// 	const currentScrollY = window.scrollY
-	// 	const isMobile = window.innerWidth < 640 // 'sm' breakpoint in Tailwind
-
-	// 	if (isMobile) {
-	// 		if (currentScrollY > lastScrollY) {
-	// 		setIsVisible(false)
-	// 		} else {
-	// 		setIsVisible(true)
-	// 		}
-	// 	} else {
-	// 		setIsVisible(true)
-	// 	}
-
-	// 	setLastScrollY(currentScrollY)
-	// 	}
-	// 	window.addEventListener('scroll', handleScroll, { passive: true })
-	// 	return () => window.removeEventListener('scroll', handleScroll)
-	// }, [lastScrollY]);
-
-	// useEffect(() => {
-	// 	if (isVisible) {
-	// 	controls.start({ y: 0, opacity: 1 })
-	// 	} else {
-	// 	controls.start({ y: -100, opacity: 0 })
-	// 	}
-	// }, [isVisible, controls]);
 
 
   return (
     <>
-	{/* <motion.nav
-      className="bg-white shadow-md fixed top-0 left-0 right-0 z-50"
-      initial={{ y: 0, opacity: 1 }}
-      animate={controls}
-      transition={{ duration: 0.3 }}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <span className="font-bold text-xl text-indigo-600">Logo</span>
-          </div>
-          <div className="flex items-center space-x-4">
-			
-            <AnimatePresence>
-				{isOpen && (
-				<motion.div 
-					className="sm:hidden"
-					initial={{ opacity: 0, height: 0 }}
-					animate={{ opacity: 1, height: 'auto' }}
-					exit={{ opacity: 0, height: 0 }}
-					transition={{ duration: 0.3 }}
-				>
-					<div className="pt-2 pb-3 space-y-1">
-					<a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Home</a>
-					<a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Contacto</a>
-					<a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Login</a>
-					<a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Registro</a>
-					<a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Menu</a>
-					</div>
-				</motion.div>
-				)}
-			</AnimatePresence>
-
-          </div>
-        </div>
-      </div>
-    </motion.nav> */}
-
-
-
-
 	<motion.nav
       className="bg-white shadow-md fixed top-0 left-0 right-0 z-50"
       initial={{ y: 0, opacity: 1 }}
@@ -104,6 +37,14 @@ const Navbar = () => {
 				<a href="#login" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Login</a>
 				<a href="#" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Registro</a>
 				<a href="#" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Menu</a>
+				<motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-3 py-2 rounded-md text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+                    onClick={() => setShowLogin(!showLogin)}
+                  >
+                    Login
+                  </motion.button>
 			</div>
 			<div className="-mr-2 flex items-center sm:hidden">
 				<button
@@ -158,6 +99,33 @@ const Navbar = () => {
 		</AnimatePresence>
 	</nav>
 	</motion.nav>
+
+
+
+	<AnimatePresence>
+        {showLogin && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+            onClick={() => setShowLogin(false)}
+          >
+            <motion.div
+              initial={{ y: -50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -50, opacity: 0 }}
+              className="bg-white p-8 rounded-lg shadow-xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h2 className="text-2xl font-bold mb-4">Login</h2>
+			  <Login />
+
+
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
 
 

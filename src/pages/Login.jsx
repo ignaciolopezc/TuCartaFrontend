@@ -68,7 +68,7 @@ const Login = () => {
 								</label>
 								<div className="mt-1 relative rounded-md shadow-sm">
 									<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-										<i class="bi bi-incognito text-gray-400"></i>
+										<i className="bi bi-incognito text-gray-400"></i>
 									</div>
 									<input
 										type={showPassword ? "text" : "password"}
@@ -84,9 +84,9 @@ const Login = () => {
 											onClick={() => setShowPassword(!showPassword)}
 											>
 											{showPassword ? (
-												<i class="bi bi-eye text-gray-400" />
+												<i className="bi bi-eye text-gray-400" />
 											) : (
-												<i class="bi bi-eye-slash text-gray-400" />
+												<i className="bi bi-eye-slash text-gray-400" />
 											)}
 										</button>									
 								</div>

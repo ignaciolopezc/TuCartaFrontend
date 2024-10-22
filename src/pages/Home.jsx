@@ -2,7 +2,7 @@ import imagen from "../assets/images/food/1.jpg"
 
 const Home = () => {
   return (
-    <section id="menu">
+    <section id="home">
       <h1>menu</h1>
         <div className="container relative mt-8">   
           <div id="grid" className="md:flex justify-center">

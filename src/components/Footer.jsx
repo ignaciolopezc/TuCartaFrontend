@@ -19,8 +19,17 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Enlaces</h3>
             <ul className="space-y-2">
               <li><motion.a href="#" className="hover:text-indigo-400" whileHover={{ x: 5 }}>Contacto</motion.a></li>
-              <li><motion.a href="#" className="hover:text-indigo-400" whileHover={{ x: 5 }}>Políticas</motion.a></li>
+              <li><motion.a href="#" className="hover:text-indigo-400" whileHover={{ x: 5 }}>Politica de privacidad</motion.a></li>
+              <li><motion.a href="#" className="hover:text-indigo-400" whileHover={{ x: 5 }}>Condiciones de uso</motion.a></li>
+              <li><motion.a href="#" className="hover:text-indigo-400" whileHover={{ x: 5 }}>Terminos y condiciones de uso</motion.a></li>
               <li><motion.a href="#" className="hover:text-indigo-400" whileHover={{ x: 5 }}>Quiénes Somos</motion.a></li>
+              <li><motion.a href="#" className="hover:text-indigo-400" whileHover={{ x: 5 }}>Caracteristicas </motion.a></li>
+              <li><motion.a href="#" className="hover:text-indigo-400" whileHover={{ x: 5 }}>Login</motion.a></li>
+              <li><motion.a href="#" className="hover:text-indigo-400" whileHover={{ x: 5 }}>Resgistro</motion.a></li>
+              <li><motion.a href="#" className="hover:text-indigo-400" whileHover={{ x: 5 }}>Demo</motion.a></li>
+              <li><motion.a href="#" className="hover:text-indigo-400" whileHover={{ x: 5 }}>precios</motion.a></li>
+              <li><motion.a href="#" className="hover:text-indigo-400" whileHover={{ x: 5 }}>preguntas frecuentes</motion.a></li>
+              
             </ul>
           </div>
           <div className="w-full md:w-1/4">

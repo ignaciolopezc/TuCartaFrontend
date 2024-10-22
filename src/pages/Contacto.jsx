@@ -6,7 +6,7 @@ const Contacto = () => {
 
     return (
     <>
-        <section className="relative md:py-24 py-16">
+        <section id="contacto" className="relative md:py-24 py-16">
             <div className="container relative">
                 <div className="grid md:grid-cols-12 grid-cols-1 items-center gap-[30px]">
                     <div className="lg:col-span-5 md:col-span-6">

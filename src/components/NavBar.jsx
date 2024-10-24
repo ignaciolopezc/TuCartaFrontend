@@ -6,14 +6,14 @@ import Login from '../pages/Login';
 
 
 const Navbar = () => {
-	const [currentPage, setCurrentPage] = useState('home');
 	const [selectedItem, setSelectedItem] = useState('home');
 	const [isOpen, setIsOpen] = useState(false);
 
 	const menuItems = [
-		{ id: 'home', label: 'Home' },
-		{ id: 'contacto', label: 'Contacto' },
-		{ id: 'login', label: 'Login' },
+		{ id: 'home', label: 'Menú QR', link : '#menu' },
+		{ id: 'features', label: 'Dashboard', link : '#dashboard' },
+		{ id: 'contacto', label: 'Contacto', link : '#contacto' },
+		{ id: 'login', label: 'Login', link : '#login' },
 	];
 	
 	const menuIcon = {
@@ -105,51 +105,6 @@ const Navbar = () => {
 				</AnimatePresence>
 			</div>
 		</nav>
-
-
-
-
-
-	{/* <nav className="bg-green-100 px-8 py-8 sm:pt-6 sm:pb-4 pb-5 mx-auto max-w-screen-xl lg:px-12 lg:py-12">
-      <div>
-        <ul className="flex space-x-12 justify-center">
-          <li>
-            <NavLink to="#login" className={({ isActive }) => 
-                [
-                  "text-black",
-                  isActive ? "font-bold text-red-600" : null
-                ].filter(Boolean).join(" ")
-              }>Home
-			  </NavLink>
-          </li>
-          <li>
-            <NavLink to="/" className={({ isActive }) => 
-                [
-                  "text-black",
-                  isActive ? "font-bold text-red-600" : null
-                ].filter(Boolean).join(" ")
-              }
-            >
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) => 
-                [
-                  "text-black",
-                  isActive ? "font-bold text-red-600" : null
-                ].filter(Boolean).join(" ")
-              }
-            >
-              Contact
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-    </nav> */}
-
     </>
   );
 };
